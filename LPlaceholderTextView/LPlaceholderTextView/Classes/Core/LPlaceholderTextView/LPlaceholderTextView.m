@@ -53,6 +53,7 @@
 {
     _placeholderColor = [UIColor lightGrayColor];
     _leftMargin=35;
+    self.textContainer.lineFragmentPadding = 35;
     [self layoutGUI];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:self];
 }
