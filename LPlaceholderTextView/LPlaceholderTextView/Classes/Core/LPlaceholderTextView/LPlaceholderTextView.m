@@ -52,6 +52,7 @@
 - (void)initialize
 {
     _placeholderColor = [UIColor lightGrayColor];
+    _leftMargin=35;
     [self layoutGUI];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:self];
 }
@@ -115,7 +116,7 @@
     {
         if (!_placeholderLabel)
         {
-            _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(35, 8, self.bounds.size.width - 16, 0)];
+            _placeholderLabel = [[UILabel alloc] initWithFrame:CGRectMake(_leftMargin, 8, self.bounds.size.width - 16, 0)];
             _placeholderLabel.lineBreakMode = NSLineBreakByWordWrapping;
             _placeholderLabel.numberOfLines = 0;
             _placeholderLabel.font = self.font;
@@ -137,6 +138,9 @@
 
 
 #pragma mark -
-
+-(void)setMargin:(NSInteger) leftMargin{
+    _leftMargin = leftMargin;
+    self.textContainer.lineFragmentPadding = leftMargin;
+}
 
 @end

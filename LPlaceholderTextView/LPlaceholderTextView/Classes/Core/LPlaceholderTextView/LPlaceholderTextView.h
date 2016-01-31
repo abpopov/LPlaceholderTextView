@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSString *placeholderText;
 @property (strong, nonatomic) UIColor *placeholderColor;
+@property NSInteger leftMargin;
 
-
+-(void)setMargin:(NSInteger) leftMargin;
 @end
